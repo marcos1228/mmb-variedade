@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MMB Variedade - Perfumaria & Joias</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #efc75e; /* cor principal do texto */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* garante que o rodapé vá pro final */
+    }
+    header {
+      background: #cd496c; /* cor do cabeçalho */
+      color: #efc75e;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background: #cd496c;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0.5rem;
+    }
+    nav a {
+      color: #efc75e;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .content {
+      flex: 1; /* ocupa todo espaço disponível para empurrar o footer */
+      padding: 2rem;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      color: #333;
+    }
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .btn-comprar {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #cd496c;
+      color: #efc75e;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn-comprar:hover {
+      background: #b13d5c;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #cd496c;
+      color: #efc75e;
+    }
+    footer a {
+      color: #efc75e;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MMB Variedade</h1>
+    <p>Perfumaria & Joias</p>
+  </header>
+
+  <nav>
+    <a href="#">Início</a>
+    <a href="#">Produtos</a>
+    <a href="#">Contato</a>
+  </nav>
+
+  <div class="content">
+    <div class="container">
+      <div class="card">
+        <img src="https://via.placeholder.com/250x200" alt="Perfume">
+        <h3>Perfume Elegance</h3>
+        <p>R$ 120,00</p>
+        <a class="btn-comprar" href="https://wa.me/qr/AIZ4RFGKEVIMI1" target="_blank">Comprar</a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/250x200" alt="Colar">
+        <h3>Colar Dourado</h3>
+        <p>R$ 90,00</p>
+        <a class="btn-comprar" href="https://wa.me/qr/AIZ4RFGKEVIMI1" target="_blank">Comprar</a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/250x200" alt="Brinco">
+        <h3>Brinco Pérola</h3>
+        <p>R$ 70,00</p>
+        <a class="btn-comprar" href="https://wa.me/qr/AIZ4RFGKEVIMI1" target="_blank">Comprar</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 MMB Variedade - Todos os direitos reservados</p>
+    <p>Entre em contato: <a href="mailto:contato@mmbvariedade.com">contato@mmbvariedade.com</a></p>
+  </footer>
+</body>
+</html>
