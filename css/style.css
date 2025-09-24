@@ -1,0 +1,91 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    color: #efc75e;
+    height: 100vh;          /* ocupa toda a altura da tela */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header fixo */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;           /* altura maior */
+    background: url("../image/capa_mmb.png") no-repeat center center;
+    background-size: cover;  /* preenche todo o header */
+    z-index: 1000;
+  }
+  
+  /* Footer fixo */
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;            /* ajuste conforme necessário */
+    background: #cd496c;
+    color: #efc75e;
+    text-align: center;
+    padding: 1rem;
+    z-index: 1000;
+  }
+  
+  /* Conteúdo rolável */
+  main.content {
+    margin-top: 250px;       /* igual à altura do header */
+    margin-bottom: 60px;     /* altura do footer */
+    overflow-y: auto;
+    flex: 1;
+    padding: 1rem 2rem;
+  }
+  
+  /* Container de cards */
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  /* Cards */
+  .card {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    color: #333;
+  }
+  
+  .card img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  .btn-comprar {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background: #cd496c;
+    color: #efc75e;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .btn-comprar:hover {
+    background: #b13d5c;
+  }
+  
