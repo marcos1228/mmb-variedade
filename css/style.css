@@ -9,9 +9,9 @@
     font-family: Arial, sans-serif;
     background: #f9f9f9;
     color: #efc75e;
+    height: 100vh;          /* ocupa toda a altura da tela */
     display: flex;
     flex-direction: column;
-    height: 100vh;
   }
   
   /* Header fixo */
@@ -20,9 +20,9 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 250px; /* altura padrão para desktop */
+    height: 250px;           /* altura maior */
     background: url("../image/capa_mmb.png") no-repeat center center;
-    background-size: cover; /* preenche todo o header */
+    background-size: cover;  /* preenche todo o header */
     z-index: 1000;
   }
   
@@ -32,7 +32,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 60px;
+    height: 60px;            /* ajuste conforme necessário */
     background: #cd496c;
     color: #efc75e;
     text-align: center;
@@ -42,8 +42,8 @@
   
   /* Conteúdo rolável */
   main.content {
-    margin-top: 250px;   /* igual à altura do header */
-    margin-bottom: 60px; /* altura do footer */
+    margin-top: 250px;       /* igual à altura do header */
+    margin-bottom: 60px;     /* altura do footer */
     overflow-y: auto;
     flex: 1;
     padding: 1rem 2rem;
@@ -68,11 +68,9 @@
   
   .card img {
     max-width: 100%;
-    height: auto; /* mantém proporção */
     border-radius: 8px;
   }
   
-  /* Botão Comprar */
   .btn-comprar {
     display: inline-block;
     margin-top: 1rem;
@@ -89,48 +87,5 @@
   
   .btn-comprar:hover {
     background: #b13d5c;
-  }
-  
-  /* Media Queries para Responsividade */
-  @media (max-width: 768px) {
-    header {
-      height: 180px; /* menor altura para mobile */
-    }
-  
-    main.content {
-      margin-top: 180px; /* ajusta scroll para mobile */
-      padding: 1rem;
-    }
-  
-    .container {
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 1rem;
-    }
-  
-    .btn-comprar {
-      padding: 0.5rem 1rem;
-      font-size: 0.9rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    header {
-      height: 150px; /* ainda menor para smartphones */
-    }
-  
-    main.content {
-      margin-top: 150px;
-      padding: 0.5rem;
-    }
-  
-    .container {
-      grid-template-columns: 1fr; /* cards um embaixo do outro */
-      gap: 0.8rem;
-    }
-  
-    .btn-comprar {
-      width: 100%;
-      padding: 0.5rem 0;
-    }
   }
   
