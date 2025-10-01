@@ -118,15 +118,25 @@ main.content {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: #efc75e;   /* mesma cor do footer */
-  color: #cd496c;        /* texto em amarelo */
+  background: #cd496c;
+  color: #efc75e;
   font-weight: bold;
   font-size: 0.9rem;
   padding: 5px 10px;
   border-radius: 5px;
   z-index: 10;
+
+  animation: blink 1s infinite;
 }
 
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0.3;
+  }
+}
 
 /* Preços */
 .preco-antigo {
