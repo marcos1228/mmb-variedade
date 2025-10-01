@@ -59,6 +59,7 @@ main.content {
 
 /* Cards */
 .card {
+  position: relative; /* necessário para a tag ficar dentro do card */
   background: #fff;
   padding: 1rem;
   border-radius: 10px;
@@ -110,4 +111,31 @@ main.content {
     padding: 0.5rem;
     font-size: 0.9rem;
   }
+}
+
+/* Tag de promoção */
+.promo-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #cd496c;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Preços */
+.preco-antigo {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 8px;
+}
+
+.preco-novo {
+  color: #cd496c;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
