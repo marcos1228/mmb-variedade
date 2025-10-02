@@ -315,36 +315,37 @@
   <!-- Script para menu -->
   <script>
     const filterButtons = document.querySelectorAll('#main-nav a');
-    const cards = document.querySelectorAll('.card');
-    const nav = document.getElementById('main-nav');
-    let lastScroll = 0;
+const cards = document.querySelectorAll('.card');
+const nav = document.getElementById('main-nav');
+let lastScroll = window.scrollY || 0;
 
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
+window.addEventListener('scroll', () => {
+  const currentScroll = window.scrollY || 0;
 
-      if (currentScroll > lastScroll && currentScroll > 50) {
-        nav.classList.add('hidden');
+  if (currentScroll > lastScroll && currentScroll > 50) {
+    nav.classList.add('hidden');
+  } else {
+    nav.classList.remove('hidden');
+  }
+
+  lastScroll = currentScroll <= 0 ? 0 : currentScroll; // evita scroll negativo
+});
+
+// Filtro de produtos
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const filter = btn.getAttribute('data-filter');
+
+    cards.forEach(card => {
+      if (filter === 'all' || card.dataset.category === filter) {
+        card.style.display = 'block';
       } else {
-        nav.classList.remove('hidden');
+        card.style.display = 'none';
       }
-
-      lastScroll = currentScroll;
-    });
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const filter = btn.getAttribute('data-filter');
-
-      cards.forEach(card => {
-        if (filter === 'all' || card.dataset.category === filter) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
     });
   });
+});
   </script>
 </body>
 </html>

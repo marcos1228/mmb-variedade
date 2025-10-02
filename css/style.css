@@ -7,49 +7,42 @@
 
 html, body {
   height: 100%;
-  overflow-y: auto; /* rolagem global */
   font-family: Arial, sans-serif;
   background: #f9f9f9;
   color: #efc75e;
 }
 
-/* Header fixo */
+/* Header */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 250px;
   background: url("../image/capa_mmb.png") no-repeat center center;
   background-size: cover;
-  z-index: 1000;
 }
 
 /* Nav fixo */
 #main-nav {
-  position: fixed;
-  top: 250px;
-  left: 0;
-  width: 100%;
+  position: sticky;
+  top: 0;
   background-color: #fff;
   text-align: center;
-  z-index: 1000;
   padding: 15px;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
   transition: transform 0.3s ease;
+  z-index: 1000;
 }
 
-/* Esconde menu ao rolar para baixo */
 #main-nav.hidden {
-  transform: translateY(-100%);
+  transform: translateY(-120%);
 }
 
 /* Links do menu */
 #main-nav a {
   display: inline-block;
-  margin: 0 15px;
+  margin: 0 10px;
   padding: 10px 20px;
   color: #efc75e;
   background-color: #cd496c;
@@ -66,10 +59,8 @@ header {
 
 /* Conteúdo */
 main.content {
-  padding-top: 310px; /* header + nav */
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 60px; /* espaço para footer */
+  padding: 20px;
+  margin-top: 0; /* sem interferência com header sticky */
 }
 
 /* Container de cards */
@@ -134,29 +125,17 @@ main.content {
   25%, 75% { opacity: 0.3; }
 }
 
-/* Preços */
-.preco-antigo { text-decoration: line-through; color: #888; margin-right: 8px; }
-.preco-novo { color: #cd496c; font-weight: bold; font-size: 1.1rem; }
-.preco-parcelado, .preco-pix { font-size: 0.95rem; color: #333; }
-
 /* Footer fixo */
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
   background: #cd496c;
   color: #efc75e;
   text-align: center;
   padding: 1rem;
-  z-index: 1000;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
   header { height: 180px; }
-  main.content { padding-top: 240px; }
+  #main-nav { padding: 10px; gap: 0.5rem; }
   .container { grid-template-columns: 1fr; }
-  footer { height: auto; padding: 0.5rem; font-size: 0.9rem; }
 }
