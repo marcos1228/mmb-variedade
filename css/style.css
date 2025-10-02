@@ -139,3 +139,8 @@ footer {
   #main-nav { padding: 10px; gap: 0.5rem; }
   .container { grid-template-columns: 1fr; }
 }
+
+/* Preços */
+.preco-antigo { text-decoration: line-through; color: #888; margin-right: 8px; }
+.preco-novo { color: #cd496c; font-weight: bold; font-size: 1.1rem; }
+.preco-parcelado, .preco-pix { font-size: 0.95rem; color: #333; }
