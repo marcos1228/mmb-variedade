@@ -5,12 +5,23 @@
   box-sizing: border-box;
 }
 
-html, body {
+html {
+  height: 100%;
+  overflow: hidden; /* bloqueia scroll da página */
+}
+
+body {
   height: 100%;
   font-family: Arial, sans-serif;
   background: #f9f9f9;
   color: #efc75e;
-  padding-bottom: 80px; /* espaço para não sobrepor o footer */
+
+  /* agora o scroll só acontece no body */
+  overflow-y: auto;
+
+  /* espaço para não cobrir header e footer */
+  padding-top: 320px; /* header + nav */
+  padding-bottom: 80px; /* footer */
 }
 
 /* Header fixo */
@@ -28,7 +39,7 @@ header {
 /* Nav fixo abaixo do header */
 #main-nav {
   position: fixed;
-  top: 250px; /* logo abaixo do header */
+  top: 250px;
   left: 0;
   width: 100%;
   background-color: #fff;
@@ -67,7 +78,6 @@ header {
 /* Conteúdo */
 main.content {
   padding: 20px;
-  margin-top: 320px; /* compensação da altura do header + nav */
 }
 
 /* Container de cards */
@@ -149,7 +159,7 @@ footer {
 @media (max-width: 768px) {
   header { height: 180px; }
   #main-nav { top: 180px; padding: 10px; gap: 0.5rem; }
-  main.content { margin-top: 260px; }
+  body { padding-top: 260px; }
   .container { grid-template-columns: 1fr; }
 }
 
