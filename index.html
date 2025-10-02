@@ -14,21 +14,28 @@
 <body>
   <header></header>
 
-  <nav>
-    <!-- Adicione links do menu aqui -->
+  <nav id="main-nav">
+    <a href="#" data-filter="all">Todos</a>
+    <a href="#" data-filter="promocao">Promoções</a>
+    <a href="#" data-filter="batom">Batom</a>
   </nav>
 
   <main class="content">
     <div class="container">
-      <div class="card">
+
+      <div class="card" data-category="promocao">
         <div class="promo-tag">Promoção</div>
         <img src="./image/B48130_Malbec_Desodorante_Colônia_1.webp" alt="Perfume">
         <h3>Malbec Desodorante Colônia 100Ml</h3>
-        <p><span class="preco-antigo">R$ 209,90</span> <span class="preco-novo">R$ 170,00</span></p>
+        <p>
+          <span class="preco-antigo">R$ 209,90</span>
+          <span class="preco-novo">R$ 170,00</span> <p class="preco-pix">(à vista: dinheiro ou Pix)</p>
+        </p>
+        <p class="preco-parcelado">ou 2x de R$ 104,95 sem juros no cartão</p>
         <a class="btn-comprar" href="https://wa.me/qr/AIZ4RFGKEVIMI1" target="_blank">Comprar</a>
       </div>
 
-      <div class="card">
+      <div class="card" data-category="promocao">
         <div class="promo-tag">Promoção</div>
         <img src="./image/6093b571-90ca-4e2d-9f25-e5a885d99601-bot-58506-malbec-pure-gold-desodorante-colonia-02.webp" alt="Perfume">
         <h3>Malbec Pure Gold Desodorante Colônia 100Ml</h3>
@@ -36,7 +43,7 @@
         <a class="btn-comprar" href="https://wa.me/qr/AIZ4RFGKEVIMI1" target="_blank">Comprar</a>
       </div>
 
-      <div class="card">
+      <div class="card" data-category="promocao">
         <div class="promo-tag">Promoção</div>
         <img src="./image/1af375cb-0fb1-462e-916a-da119ae9e243-malbec-black-desodorante-colonia-100ml.webp" alt="Perfume">
         <h3>Malbec Black Desodorante Colônia 100Ml</h3>
@@ -44,7 +51,7 @@
         <a class="btn-comprar" href="https://wa.me/qr/AIZ4RFGKEVIMI1" target="_blank">Comprar</a>
       </div>
 
-      <div class="card">
+      <div class="card" data-category="promocao">
         <div class="promo-tag">Promoção</div>
         <img src="./image/f896176d-a231-445a-80b1-d00b64780432-bot-84390-malbec-magnetic-desodorante-colonia-frontal-01.webp" alt="Perfume">
         <h3>Malbec Magnetic Desodorante Colônia 100Ml</h3>
@@ -52,7 +59,7 @@
         <a class="btn-comprar" href="https://wa.me/qr/AIZ4RFGKEVIMI1" target="_blank">Comprar</a>
       </div>
 
-      <div class="card">
+      <div class="card" data-category="promocao">
         <div class="promo-tag">Promoção</div>
         <img src="./image/c3174ec1-3f99-4502-b6b9-046264ada2ec-bot-55648-men-nba-desodorante-colonia-02.webp" alt="Perfume">
         <h3>Men Nba Desodorante Colônia 100Ml</h3>
@@ -60,7 +67,7 @@
         <a class="btn-comprar" href="https://wa.me/qr/AIZ4RFGKEVIMI1" target="_blank">Comprar</a>
       </div>
 
-      <div class="card">
+      <div class="card" data-category="promocao">
         <div class="promo-tag">Promoção</div>
         <img src="./image/br-11134201-23030-km4jucpzvkov4f.jpg" alt="Perfume">
         <h3>Perfume Natura Essencial OUD Feminino 100 ml Deo Parfum</h3>
@@ -68,7 +75,7 @@
         <a class="btn-comprar" href="https://wa.me/qr/AIZ4RFGKEVIMI1" target="_blank">Comprar</a>
       </div>
 
-      <div class="card">
+      <div class="card" data-category="promocao">
         <div class="promo-tag">Promoção</div>
         <img src="./image/NATBRA-76423_2.jpg" alt="Perfume">
         <h3>Essencial Exclusivo Feminino 100 ml Deo Parfum</h3>
@@ -76,7 +83,7 @@
         <a class="btn-comprar" href="https://wa.me/qr/AIZ4RFGKEVIMI1" target="_blank">Comprar</a>
       </div>
 
-      <div class="card">
+      <div class="card" data-category="promocao">
         <div class="promo-tag">Promoção</div>
         <img src="./image/85323GG.jpg" alt="Perfume">
         <h3>Boticoll Crazy Des Col Feelings V2 100Ml</h3>
@@ -273,6 +280,30 @@
         <a class="btn-comprar" href="https://wa.me/qr/AIZ4RFGKEVIMI1" target="_blank">Comprar</a>
       </div>
 
+      <div class="card" data-category="promocao">
+        <div class="promo-tag">Promoção</div>
+        <img src="./image/B48130_Malbec_Desodorante_Colônia_1.webp" alt="Perfume">
+        <h3>Malbec Desodorante Colônia 100Ml</h3>
+        <p>
+          <span class="preco-antigo">R$ 209,90</span>
+          <span class="preco-novo">R$ 170,00</span> <p class="preco-pix">(à vista: dinheiro ou Pix)</p>
+        </p>
+        <p class="preco-parcelado">ou 2x de R$ 104,95 sem juros no cartão</p>
+        <a class="btn-comprar" href="https://wa.me/qr/AIZ4RFGKEVIMI1" target="_blank">Comprar</a>
+      </div>
+
+      <div class="card" data-category="batom">
+        <div class="promo-tag">Promoção</div>
+        <img src="./image/d831871f-189d-47e2-8536-7fb125222df1-qdb-58181-batom-cremoso-cor-120-frontal-01.webp" alt="batom">
+        <h3>Batom Nude Marrom 120 Cremoso 3,8G</h3>
+        <p>
+          <span class="preco-antigo">R$ 27,90</span>
+          <span class="preco-novo">R$ 24,00</span> <p class="preco-pix">(à vista: dinheiro ou Pix)</p>
+        </p>
+        <p class="preco-pix">ou 1x de R$ 27,90 sem juros no cartão</p>
+        <a class="btn-comprar" href="https://wa.me/qr/AIZ4RFGKEVIMI1" target="_blank">Comprar</a>
+      </div>
+
     </div>
   </main>
 
@@ -280,5 +311,40 @@
     <p>&copy; 2025 MMB Variedade - Todos os direitos reservados</p>
     <p>Entre em contato: <a href="mailto:contato@mmbvariedade.com">contato@mmbvariedade.com</a></p>
   </footer>
+
+  <!-- Script para menu -->
+  <script>
+    const filterButtons = document.querySelectorAll('#main-nav a');
+    const cards = document.querySelectorAll('.card');
+    const nav = document.getElementById('main-nav');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+
+      if (currentScroll > lastScroll && currentScroll > 50) {
+        nav.classList.add('hidden');
+      } else {
+        nav.classList.remove('hidden');
+      }
+
+      lastScroll = currentScroll;
+    });
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const filter = btn.getAttribute('data-filter');
+
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+  </script>
 </body>
 </html>
