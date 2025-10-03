@@ -181,3 +181,9 @@ footer {
   font-size: 0.95rem; 
   color: #333; 
 }
+
+header img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
