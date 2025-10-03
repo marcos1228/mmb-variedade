@@ -10,18 +10,25 @@ html {
   overflow: hidden; /* bloqueia scroll da página */
 }
 
+/* * Variáveis CSS para facilitar a manutenção
+ * Alturas base para Desktop
+ */
+:root {
+  --header-height-desktop: 250px;
+  --nav-height-approx: 60px; /* Altura mínima aproximada do nav */
+  --footer-height: 80px;
+}
+
 body {
   height: 100%;
   font-family: Arial, sans-serif;
   background: #f9f9f9;
   color: #efc75e;
-
-  /* agora o scroll só acontece no body */
   overflow-y: auto;
 
-  /* espaço para não cobrir header e footer */
-  padding-top: 320px; /* header + nav */
-  padding-bottom: 80px; /* footer */
+  /* Calcula o padding-top usando as variáveis de Desktop */
+  padding-top: calc(var(--header-height-desktop) + var(--nav-height-approx));
+  padding-bottom: var(--footer-height); 
 }
 
 /* Header fixo */
@@ -30,7 +37,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 250px;
+  height: var(--header-height-desktop); /* Usa a variável */
   background: url("../image/capa_mmb.png") no-repeat center center;
   background-size: cover;
   z-index: 1000;
@@ -39,7 +46,7 @@ header {
 /* Nav fixo abaixo do header */
 #main-nav {
   position: fixed;
-  top: 250px;
+  top: var(--header-height-desktop); /* Usa a variável */
   left: 0;
   width: 100%;
   background-color: #fff;
@@ -48,7 +55,7 @@ header {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Permite quebrar linha para botões menores */
   transition: transform 0.3s ease;
   z-index: 999;
 }
@@ -57,7 +64,7 @@ header {
   transform: translateY(-120%);
 }
 
-/* Links do menu */
+/* Links do menu (Botões de Promoções) */
 #main-nav a {
   display: inline-block;
   margin: 0 10px;
@@ -155,14 +162,6 @@ footer {
   z-index: 1000;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  header { height: 180px; }
-  #main-nav { top: 180px; padding: 10px; gap: 0.5rem; }
-  body { padding-top: 260px; }
-  .container { grid-template-columns: 1fr; }
-}
-
 /* Preços */
 .preco-antigo { 
   text-decoration: line-through; 
@@ -224,4 +223,36 @@ header img {
 
 .modal .close:hover {
   color: #ff6600;
+}
+
+/* =======================================================
+ * AJUSTE DE RESPONSIVIDADE PARA CELULAR (max-width: 768px)
+ * ======================================================= */
+@media (max-width: 768px) {
+  
+  /* Redefine a altura do header para mobile */
+  header { 
+    height: 180px; 
+  }
+  
+  /* Reposiciona o nav logo abaixo do novo header */
+  #main-nav { 
+    top: 180px; /* Fica abaixo dos 180px do header */
+    padding: 10px; 
+    gap: 0.5rem; 
+  }
+  
+  /* * AUMENTO CRÍTICO: 
+   * Aumenta o padding-top do body para garantir que o nav (que pode 
+   * quebrar em 2 linhas) fique totalmente visível e não seja cortado.
+   * 180px (header) + ~100px (nav quebrado) = 280px.
+   */
+  body { 
+    padding-top: 280px; 
+  }
+  
+  /* Ajusta o grid para uma coluna só no celular */
+  .container { 
+    grid-template-columns: 1fr; 
+  }
 }

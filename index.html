@@ -7,6 +7,7 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="./image/capa_mmb.png">
+  <link rel="preload" as="image" href="./image/capa_mmb.png">
 
   <!-- CSS externo -->
   <link rel="stylesheet" href="./css/style.css">
@@ -522,7 +523,6 @@ filterButtons.forEach(btn => {
     });
   });
 });
-
 const modal = document.getElementById("image-modal");
   const modalImg = document.getElementById("modal-img");
   const closeBtn = document.querySelector(".modal .close");
@@ -543,6 +543,7 @@ const modal = document.getElementById("image-modal");
       modal.style.display = "none";
     }
   });
+
   </script>
 </body>
 </html>
