@@ -15,7 +15,7 @@ html {
  */
 :root {
   --header-height-desktop: 250px;
-  --nav-height-approx: 60px; /* Altura mínima aproximada do nav */
+  --nav-height-approx: 60px; 
   --footer-height: 80px;
 }
 
@@ -37,7 +37,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--header-height-desktop); /* Usa a variável */
+  height: var(--header-height-desktop); /* Altura padrão Desktop */
   background: url("../image/capa_mmb.png") no-repeat center center;
   background-size: cover;
   z-index: 1000;
@@ -46,7 +46,7 @@ header {
 /* Nav fixo abaixo do header */
 #main-nav {
   position: fixed;
-  top: var(--header-height-desktop); /* Usa a variável */
+  top: var(--header-height-desktop); /* Posicionamento padrão Desktop */
   left: 0;
   width: 100%;
   background-color: #fff;
@@ -58,6 +58,8 @@ header {
   flex-wrap: wrap; /* Permite quebrar linha para botões menores */
   transition: transform 0.3s ease;
   z-index: 999;
+  /* IMPORTANTE: Adiciona uma altura mínima para ajudar no cálculo do topo */
+  min-height: 60px;
 }
 
 #main-nav.hidden {
@@ -183,14 +185,14 @@ footer {
 
 header img {
   width: 100%;
-  height: 250px;
+  height: 250px; /* Padrão Desktop */
   object-fit: cover;
 }
 
 
-/* Modal de imagem fullscreen */
+/* Modal de imagem fullscreen (MANTIDO) */
 .modal {
-  display: none; /* escondido por padrão */
+  display: none; 
   position: fixed;
   z-index: 2000;
   left: 0;
@@ -200,7 +202,6 @@ header img {
   background-color: rgba(0,0,0,0.9);
 }
 
-/* Imagem dentro do modal */
 .modal-content {
   margin: auto;
   display: block;
@@ -209,7 +210,6 @@ header img {
   object-fit: contain;
 }
 
-/* Botão fechar */
 .modal .close {
   position: absolute;
   top: 15px;
@@ -230,7 +230,7 @@ header img {
  * ======================================================= */
 @media (max-width: 768px) {
   
-  /* Redefine a altura do header para mobile */
+  /* Definindo a nova altura do header no mobile */
   header { 
     height: 180px; 
   }
@@ -242,13 +242,18 @@ header img {
     gap: 0.5rem; 
   }
   
-  /* * AUMENTO CRÍTICO: 
-   * Aumenta o padding-top do body para garantir que o nav (que pode 
-   * quebrar em 2 linhas) fique totalmente visível e não seja cortado.
-   * 180px (header) + ~100px (nav quebrado) = 280px.
+  /* Garante que a imagem do header se ajuste à nova altura */
+  header img {
+    height: 180px;
+  }
+  
+  /* * AUMENTO CRÍTICO E DEFINITIVO: 
+   * Aumenta o padding-top do body para a soma do Header (180px) + 
+   * uma margem segura (110px) para o nav quebrado em 2-3 linhas.
+   * 180px + 110px = 290px. Isso deve resolver o corte.
    */
   body { 
-    padding-top: 280px; 
+    padding-top: 290px; 
   }
   
   /* Ajusta o grid para uma coluna só no celular */
