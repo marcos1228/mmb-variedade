@@ -490,7 +490,6 @@
     <p>Entre em contato: <a href="mailto:contato@mmbvariedade.com">contato@mmbvariedade.com</a></p>
   </footer>
 
-  <!-- Script para menu -->
   <script>
     const filterButtons = document.querySelectorAll('#main-nav a');
 const cards = document.querySelectorAll('.card');
@@ -509,7 +508,6 @@ window.addEventListener('scroll', () => {
   lastScroll = currentScroll <= 0 ? 0 : currentScroll; // evita scroll negativo
 });
 
-// Filtro de produtos
 filterButtons.forEach(btn => {
   btn.addEventListener('click', e => {
     e.preventDefault();
@@ -540,7 +538,6 @@ const modal = document.getElementById("image-modal");
     modal.style.display = "none";
   });
 
-  // Fecha ao clicar fora da imagem
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
       modal.style.display = "none";
